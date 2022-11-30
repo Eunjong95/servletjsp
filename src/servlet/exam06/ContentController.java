@@ -1,4 +1,4 @@
-package servlet.exam04;
+package servlet.exam06;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name="exam04.ContentContoller", urlPatterns="/exam04/ContentController")
+@WebServlet(name="exam06.ContentContoller", urlPatterns="/exam06/ContentController")
 public class ContentController extends HttpServlet {
 
 	// 클라이언트가 요청할 때 마다 실행
@@ -16,13 +16,7 @@ public class ContentController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {		
 		 
-		 request.getRequestDispatcher("/WEB-INF/views/exam04/content.jsp").forward(request, response);
+		 request.getRequestDispatcher("/WEB-INF/views/exam06/content.jsp").forward(request, response);
 	}
 
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		System.out.println("exam04.ContentContoller.doPost() 실행");
-		response.sendRedirect("/servletjsp/HomeController");
-	}
 }

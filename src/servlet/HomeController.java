@@ -19,7 +19,7 @@ public class HomeController extends HttpServlet{
 		System.out.println("HomeController.service() 실행");
 		
 		//JSP로 이동
-		request.getRequestDispatcher("/WEB-INF//views/home.jsp").forward(request, response);	
+		request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);	
 	}	
 
 }

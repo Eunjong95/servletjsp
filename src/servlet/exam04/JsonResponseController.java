@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 @WebServlet(name="exam04.JsonResponseController", urlPatterns="/exam04/JsonResponseController")
-public class JsonResponseController2 extends HttpServlet {
+public class JsonResponseController extends HttpServlet {
 
 	// 클라이언트가 요청할 때 마다 실행
 	@Override
