@@ -10,6 +10,35 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <!-- Listener 설정 -->
+  <listener>
+  	<listener-class>context.WebAppContext</listener-class>
+  </listener>
+  
+  <!-- Filter 설정 -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>SecondFilter</filter-name>
+		<filter-class>filter.SecondFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SecondFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+  <!-- 서블릿 설정 -->  
   <servlet>
     <servlet-name>HomeController</servlet-name>
     <servlet-class>servlet.HomeController</servlet-class>
@@ -21,6 +50,7 @@
     <url-pattern>/HomeController</url-pattern>
   </servlet-mapping>
   
+  <!-- 서블릿 설정 -->
     <servlet>
     <servlet-name>exam03.ContentController</servlet-name>
     <servlet-class>servlet.exam03.ContentController</servlet-class>
@@ -40,4 +70,25 @@
     <url-pattern>/exam03/ContentController</url-pattern>
   </servlet-mapping>
   
+  <!-- 세션 타임 아웃 설정 -->
+  <session-config>
+  	<!-- 20분 후에 HttpSession 객체 제거 (기본값은 30분-conf/web.xml) -->
+  	<session-timeout>20</session-timeout>	
+  </session-config>
+  
+  <!-- 에러 페이지 설정 -->  
+  <error-page>
+ 	<exception-type>java.lang.NumberFormatException</exception-type>
+  	<location>/WEB-INF/views/exam10/error_num.jsp</location>
+  </error-page>
+  
+  <error-page>
+ 	<error-code>500</error-code>
+  	<location>/WEB-INF/views/exam10/error.jsp</location>
+  </error-page>
+  
+  <error-page>
+ 	<error-code>404</error-code>
+  	<location>/WEB-INF/views/exam10/error_404.jsp</location>
+  </error-page>
 </web-app>

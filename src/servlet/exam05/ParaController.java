@@ -32,7 +32,7 @@ public class ParaController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {		
 		//Post방식에서만 해주면 되는 한글 처리 메소드
-		request.setCharacterEncoding("UTF-8");
+		//request.setCharacterEncoding("UTF-8");
 		
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");

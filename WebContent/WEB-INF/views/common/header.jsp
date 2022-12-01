@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,7 +20,14 @@
 				</a>
 				<div>
 					<div>
-						<a href="#" class="btn btn-success btn-sm">로그인</a>
+					<c:if test="${loginId==null}">
+					<a href="/servletjsp/exam07/SaveSessionController" class="btn btn-success btn-sm">로그인</a>
+					</c:if>
+					
+					<c:if test="${loginId!=null}">
+					<span class="mr-2">${loginId}</span>
+					<a href="/servletjsp/exam07/RemoveeSessionController" class="btn btn-success btn-sm">로그아웃</a>
+					</c:if>	
 					</div>
 				</div>
 			</nav>
