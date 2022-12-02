@@ -37,8 +37,7 @@ public class SaveSessionController extends HttpServlet {
 			 List<String> cart = new ArrayList<>();
 			 session.setAttribute("cart", cart);
 			 
-			 
-			 response.sendRedirect("ContentController") ;				 
+			 response.sendRedirect("ContentController");				 
 			 } else {
 				 request.getRequestDispatcher("/WEB-INF/views/exam07/loginForm.jsp").forward(request, response);
 		 } 

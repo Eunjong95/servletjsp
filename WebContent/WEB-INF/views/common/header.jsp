@@ -15,18 +15,18 @@
 		<div class="d-flex flex-column vh-100">
 			<nav class="navbar navbar-dark bg-dark text-white font-weight-bold">
 				<a class="navbar-brand" href="/servletjsp/HomeController"> 
-					<img src="/servletjsp/resources/images/tomcat.png" width="40" height="30" class="d-inline-block align-top">
+					<img src="${pageContext.request.contextPath}/resources/images/tomcat.png" width="40" height="30" class="d-inline-block align-top">
 					Servlet/JSP
 				</a>
 				<div>
 					<div>
 					<c:if test="${loginId==null}">
-					<a href="/servletjsp/exam07/SaveSessionController" class="btn btn-success btn-sm">로그인</a>
+					<a href="${pageContext.request.contextPath}/exam07/SaveSessionController" class="btn btn-success btn-sm">로그인</a>
 					</c:if>
 					
 					<c:if test="${loginId!=null}">
 					<span class="mr-2">${loginId}</span>
-					<a href="/servletjsp/exam07/RemoveeSessionController" class="btn btn-success btn-sm">로그아웃</a>
+					<a href="${pageContext.request.contextPath}/exam07/RemoveeSessionController" class="btn btn-success btn-sm">로그아웃</a>
 					</c:if>	
 					</div>
 				</div>

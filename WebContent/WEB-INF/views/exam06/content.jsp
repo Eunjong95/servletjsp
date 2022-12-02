@@ -7,8 +7,8 @@
 		content.jsp
 	</div>
 	<div class="card-body">
-      <a href="/servletjsp/exam06/CreateCookieController" class="btn btn-info btn-sm">쿠키 생성 및 설정</a>
-      <a href="/servletjsp/exam06/UseCookieController" class="btn btn-info btn-sm">쿠키 사용</a>
+      <a href="${pageContext.request.contextPath}/exam06/CreateCookieController" class="btn btn-info btn-sm">쿠키 생성 및 설정</a>
+      <a href="${pageContext.request.contextPath}/exam06/UseCookieController" class="btn btn-info btn-sm">쿠키 사용</a>
       <hr/>
       <button onclick="readCookie()" class="btn btn-info btn-sm">쿠키 읽기</button> 
       <script>

@@ -7,9 +7,9 @@
 		content.jsp
 	</div>
 	<div class="card-body">
-      <a href="/servletjsp/exam07/SaveSessionController" class="btn btn-info btn-sm">세션에 정보 저장하기</a>
-      <a href="/servletjsp/exam07/UseSessionController" class="btn btn-info btn-sm">세션에 저장된 정보 얻기</a>  
-      <a href="/servletjsp/exam07/RemoveSessionController" class="btn btn-info btn-sm">세션에 저장된 정보 삭제하기</a>      
+      <a href="${pageContext.request.contextPath}/exam07/SaveSessionController" class="btn btn-info btn-sm">세션에 정보 저장하기</a>
+      <a href="${pageContext.request.contextPath}/exam07/UseSessionController" class="btn btn-info btn-sm">세션에 저장된 정보 얻기</a>  
+      <a href="${pageContext.request.contextPath}/exam07/RemoveSessionController" class="btn btn-info btn-sm">세션에 저장된 정보 삭제하기</a>      
           
    </div>
 </div>

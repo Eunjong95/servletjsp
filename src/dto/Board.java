@@ -12,5 +12,5 @@ public class Board {
 	private Date bdate;
 	private String bfileName;
 	private String bsavedName;
-	private String bcontentType;
+	private String bfileType;
 }
