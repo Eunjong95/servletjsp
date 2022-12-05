@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+	id="WebApp_ID" version="4.0">
+  <display-name>servletjsp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Listener 설정 -->
+  <listener>
+  	<listener-class>context.WebAppContext</listener-class>
+  </listener>
+  
+  <!-- Filter 설정 -->
+  <filter>
+  	<filter-name>CharacterEncodingFilter</filter-name>
+  	<filter-class>filter.CharacterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+	<filter-name>CharacterEncodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>SecondFilter</filter-name>
+  	<filter-class>filter.SecondFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	<filter-name>SecondFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+  </filter-mapping>  
+  
+  <!-- 서블릿 설정 -->
+  <servlet>
+    <servlet-name>HomeController</servlet-name>
+    <servlet-class>servlet.HomeController</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>HomeController</servlet-name>
+    <url-pattern>/HomeController</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 서블릿 설정 -->
+  <servlet>
+    <servlet-name>exam03.ContentController</servlet-name>
+    <servlet-class>servlet.exam03.ContentController</servlet-class>
+    <init-param>
+    	<param-name>encoding</param-name>
+    	<param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>viewLocation</param-name>
+    	<param-value>/WEB-INF/views</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>exam03.ContentController</servlet-name>
+    <url-pattern>/exam03/ContentController</url-pattern>
+  </servlet-mapping>  
+  
+  <!-- 세션 타입 아웃 설정 -->
+  <session-config>
+  	<!-- 20분 후에 HttpSession 객체 제거(기본 값은 30분 - conf/web.xml) -->
+  	<session-timeout>20</session-timeout>
+  </session-config>
+  
+  <!-- 에러 페이지 설정 -->
+  <error-page>
+  	<exception-type>java.lang.NumberFormatException</exception-type>
+  	<location>/WEB-INF/views/exam10/error_num.jsp</location>
+  </error-page>
+   
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/WEB-INF/views/exam10/error_500.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/WEB-INF/views/exam10/error_404.jsp</location>
+  </error-page>
+  
+  <!-- Connection Pool 참조 -->
+  <resource-ref>
+	<res-ref-name>jdbc/java</res-ref-name>
+	<res-type>javax.sql.DataSource</res-type>
+	<res-auth>Container</res-auth>
+  </resource-ref>
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
